@@ -1,0 +1,1 @@
+Provides some UK tidal data. Gets future tidal predictions from https://admiralty.co.uk/ and past tidal data from https://environment.data.gov.uk/flood-monitoring/doc/reference#introduction. Admirality requires you to sign up to obtain a subscription key.
