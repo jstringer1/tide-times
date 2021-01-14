@@ -37,4 +37,5 @@ public class TideTimesController {
       @RequestParam("date") String date) {
     return service.getTidalHistory(station, date);
   }
+  
 }
