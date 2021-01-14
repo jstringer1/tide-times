@@ -6,6 +6,14 @@ public class AdmiraltyFeature {
   private AdmiraltyGeometry geometry;
   private AdmiraltyProperties properties;
 
+  public AdmiraltyFeature() {}
+
+  public AdmiraltyFeature(String type, AdmiraltyGeometry geometry, AdmiraltyProperties properties) {
+    this.type = type;
+    this.geometry = geometry;
+    this.properties = properties;
+  }
+
   public String getId() {
     return properties.getId();
   }
@@ -37,6 +45,4 @@ public class AdmiraltyFeature {
   public void setProperties(AdmiraltyProperties properties) {
     this.properties = properties;
   }
-
-
 }

@@ -4,6 +4,13 @@ public class AdmiraltyGeometry {
   private String type;
   private double[] coordinates;
 
+  public AdmiraltyGeometry() {}
+
+  public AdmiraltyGeometry(String type, double[] coordinates) {
+    this.type = type;
+    this.coordinates = coordinates;
+  }
+
   public String getType() {
     return type;
   }
@@ -19,6 +26,4 @@ public class AdmiraltyGeometry {
   public void setCoordinates(double[] coordinates) {
     this.coordinates = coordinates;
   }
-
-
 }

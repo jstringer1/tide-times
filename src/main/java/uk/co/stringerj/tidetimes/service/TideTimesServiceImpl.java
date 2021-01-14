@@ -30,13 +30,16 @@ public class TideTimesServiceImpl implements TideTimesService {
 
   private static final Logger LOGGER = Logger.getLogger(TideTimesService.class.getSimpleName());
 
-  @Autowired private TideGuageClient tideGuage;
-
-  @Autowired private AdmiraltyClient admiralty;
-
+  private TideGuageClient tideGuage;
+  private AdmiraltyClient admiralty;
   private List<Station> stationCache = new ArrayList<>();
-
   private Map<String, List<TidalPrediction>> eventCache = new HashMap<>();
+
+  @Autowired
+  public TideTimesServiceImpl(TideGuageClient tideGuage, AdmiraltyClient admiralty) {
+    this.tideGuage = tideGuage;
+    this.admiralty = admiralty;
+  }
 
   @Override
   public List<Station> getStations() {

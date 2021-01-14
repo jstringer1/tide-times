@@ -1,11 +1,13 @@
 package uk.co.stringerj.tidetimes.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import uk.co.stringerj.tidetimes.model.Station;
 import uk.co.stringerj.tidetimes.model.TidalHistory;
 import uk.co.stringerj.tidetimes.model.TidalPrediction;
@@ -14,8 +16,12 @@ import uk.co.stringerj.tidetimes.service.TideTimesService;
 @RestController
 public class TideTimesController {
 
+  private final TideTimesService service;
+
   @Autowired
-  TideTimesService service;
+  public TideTimesController(TideTimesService service) {
+    this.service = service;
+  }
 
   @GetMapping("/stations")
   public List<Station> getStations() {
@@ -33,9 +39,8 @@ public class TideTimesController {
   }
 
   @GetMapping("/station/{station}/history")
-  public List<TidalHistory> getTidalHistory(@PathVariable("station") String station,
-      @RequestParam("date") String date) {
+  public List<TidalHistory> getTidalHistory(
+      @PathVariable("station") String station, @RequestParam("date") String date) {
     return service.getTidalHistory(station, date);
   }
-  
 }

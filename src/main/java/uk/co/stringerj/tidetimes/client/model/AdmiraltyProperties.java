@@ -19,6 +19,16 @@ public class AdmiraltyProperties {
   @JsonProperty("Footnote")
   private String footnote;
 
+  public AdmiraltyProperties() {}
+
+  public AdmiraltyProperties(
+      String id, String name, String country, boolean continuousHeightsAvailable) {
+    this.id = id;
+    this.name = name;
+    this.country = country;
+    this.continuousHeightsAvailable = continuousHeightsAvailable;
+  }
+
   public String getId() {
     return id;
   }
@@ -58,6 +68,4 @@ public class AdmiraltyProperties {
   public void setFootnote(String footnote) {
     this.footnote = footnote;
   }
-
-
 }
